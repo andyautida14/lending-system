@@ -1,6 +1,6 @@
 {
-  "name": "tamaraw-reservation",
-  "version": "0.1.0",
+  "name": "lending-system",
+  "version": "0.0.0",
   "main": "main/main.js",
   "dependencies": {
     "angular": "^1.4.5",
