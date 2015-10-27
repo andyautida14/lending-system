@@ -4,6 +4,7 @@ require('crash-reporter').start();
 
 var app = require("app");
 var BrowserWindow = require("browser-window");
+// var electron = require('electron-connect').client;
 var ipc = require("ipc");
 
 var mainWindow = null;
@@ -18,6 +19,8 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({width: 800, height: 600});
 	mainWindow.loadUrl('file://' + __dirname + '/../index.html');
+
+	// client.create(mainWindow);
 
 	// Open the devtools.
 	mainWindow.openDevTools({detach: true});

@@ -5,25 +5,6 @@ var gulp						= require("gulp"),
 		extend					= require("xtend"),
 		electronServer	= require("electron-connect").server;
 
-var config = {
-	scripts: {
-		js: {
-			main: ["./src/main/**/*.js"],
-			renderer: ["./src/renderer/**/*.js"],
-			test: ["./src/text/*.spec.js"]
-		}
-	},
-	html: [
-		"./src/index.html",
-		"./src/views/*.html"
-	],
-	dependencies: [
-		"./src/node_modules/**/*"
-	],
-	static: "./src/*.json",
-	dest: "./src"
-};
-
 var electron = null;
 
 gulp.task("serve", function() {
@@ -32,16 +13,16 @@ gulp.task("serve", function() {
 		stdio: 'inherit'
 	};
 
-	electron = electronServer.create({path: config.dest});
+	electron = electronServer.create({
+		path: "./src"
+	});
 
 	electron.start();
 });
 
 gulp.task("watch", function() {
-	gulp.watch(config.static, electron.restart);
-	gulp.watch(config.html, electron.restart);
-	gulp.watch(config.scripts.js.renderer, electron.restart);
-	gulp.watch(config.scripts.js.main, electron.restart);
+	gulp.watch(["./src/*", "./src/renderer/**/*"], electron.restart);
+	gulp.watch(["./src/main/**/*"], electron.restart);
 });
 
 gulp.task("default", function(callback) {
