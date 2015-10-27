@@ -7,7 +7,6 @@ var BrowserWindow = require("browser-window");
 var ipc = require("ipc");
 
 var mainWindow = null;
-var listeners = null;
 var models = null;
 
 app.on('window-all-closed', function() {
@@ -18,10 +17,6 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({width: 800, height: 600});
-	listeners = require(__dirname + '/listeners.js');
-	models = require(__dirname + '/models.js');
-	
-	listeners.listen(ipc, models);
 	mainWindow.loadUrl('file://' + __dirname + '/../index.html');
 
 	// Open the devtools.

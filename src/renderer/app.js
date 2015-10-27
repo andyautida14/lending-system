@@ -1,7 +1,9 @@
 'use strict';
 
+var MainCtrl = require('./main-ctrl').MainCtrl;
+
 angular.module("app", [
 	"ui.bootstrap",
-	"angularMoment",
-	"communicators"
-]);
+	"angularMoment"
+])
+.controller("main", MainCtrl);
