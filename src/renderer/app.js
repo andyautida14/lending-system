@@ -1,6 +1,7 @@
 'use strict';
 
-var MainCtrl = require('./main-ctrl').MainCtrl;
+var _main = require('./renderer/main-ctrl.js');
+var MainCtrl = _main.MainCtrl;
 
 angular.module("app", [
 	"ui.bootstrap",

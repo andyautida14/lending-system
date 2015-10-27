@@ -38,10 +38,10 @@ gulp.task("serve", function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch(config.static, electron.start);
-	gulp.watch(config.html, electron.start);
-	gulp.watch(config.scripts.js.renderer, electron.start);
-	gulp.watch(config.scripts.js.main, electron.start);
+	gulp.watch(config.static, electron.restart);
+	gulp.watch(config.html, electron.restart);
+	gulp.watch(config.scripts.js.renderer, electron.restart);
+	gulp.watch(config.scripts.js.main, electron.restart);
 });
 
 gulp.task("default", function(callback) {
