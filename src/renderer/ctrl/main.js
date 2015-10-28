@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function MainCtrl ($scope, Database) {
-  console.log(Database);
+function MainCtrl ($scope) {
+
 };
 
 exports.MainCtrl = MainCtrl;
