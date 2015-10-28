@@ -1,13 +1,11 @@
 'use strict';
 
-var _main = require('./renderer/main-ctrl.js');
+var _main = require('./renderer/ctrl/main.js');
 var MainCtrl = _main.MainCtrl;
-
-var _models = require('./renderer/models.js');
-console.log(_models);
 
 angular.module("app", [
 	"ui.bootstrap",
-	"angularMoment"
+	"angularMoment",
+	"app.db"
 ])
 .controller("main", MainCtrl);

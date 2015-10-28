@@ -1,0 +1,7 @@
+{
+  "username": "root",
+  "password": "",
+  "database": "lendingsystem2",
+  "host": "localhost",
+  "port": 3306
+}
