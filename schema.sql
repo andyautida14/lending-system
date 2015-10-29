@@ -40,7 +40,6 @@ DROP TABLE IF EXISTS `borrowers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `borrowers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `due_id` bigint(20) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
@@ -48,7 +47,7 @@ CREATE TABLE `borrowers` (
   `comaker` varchar(255) DEFAULT NULL,
   `note` text,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=564 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +66,7 @@ CREATE TABLE `dues` (
   `rate` int(10) unsigned NOT NULL,
   `due_date` date NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +81,7 @@ CREATE TABLE `financers` (
   `name` varchar(255) DEFAULT NULL,
   `note` text,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,4 +127,4 @@ CREATE TABLE `payments` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-29 17:19:48
+-- Dump completed on 2015-10-29 18:47:17
