@@ -22,8 +22,6 @@ exports.connect = function(config) {
     payments: require('../models/payments.js').payments(sequelize, Sequelize)
   };
 
-  models.borrowers.belongsTo(models.dues);
-
   models.dues.belongsTo(models.borrowers);
   models.dues.belongsTo(models.financers);
   models.dues.hasMany(models.interests, {as: 'interests'});
@@ -31,8 +29,8 @@ exports.connect = function(config) {
 
   models.financers.hasMany(models.dues, {as: 'dues'});
 
-  models.interests.belongsTo(models.dues);
-  models.interests.belongsTo(models.payments);
+  models.interests.belongsTo(models.dues); 
+  models.interests.hasOne(models.payments);
 
   models.payments.belongsTo(models.dues);
   models.payments.belongsTo(models.interests);

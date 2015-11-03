@@ -1,8 +1,8 @@
--- MySQL dump 10.15  Distrib 10.0.20-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.15  Distrib 10.0.21-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: lendingsystem2
 -- ------------------------------------------------------
--- Server version	10.0.20-MariaDB-1~trusty-log
+-- Server version	10.0.21-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -93,7 +93,6 @@ DROP TABLE IF EXISTS `interests`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `interests` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `payment_id` bigint(20) unsigned DEFAULT NULL,
   `amount` bigint(20) unsigned NOT NULL,
   `for_date` date NOT NULL,
   UNIQUE KEY `id` (`id`)
@@ -127,4 +126,4 @@ CREATE TABLE `payments` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-29 18:47:17
+-- Dump completed on 2015-11-03  9:56:13
