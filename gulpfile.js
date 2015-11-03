@@ -21,7 +21,7 @@ gulp.task("serve", function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch(["./src/*", "./src/renderer/**/*"], electron.restart);
+	gulp.watch(["./src/*", "./src/renderer/**/*"], electron.reload);
 	gulp.watch(["./src/main/**/*"], electron.restart);
 });
 

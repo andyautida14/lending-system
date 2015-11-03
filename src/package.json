@@ -9,9 +9,11 @@
     "angular-ui-grid": "^3.0.5",
     "angular-ui-router": "^0.2.15",
     "bootstrap": "^3.3.5",
-    "electron-connect": "^0.3.2",
     "moment": "^2.10.6",
     "mysql": "^2.9.0",
     "sequelize": "^3.6.0"
+  },
+  "devDependencies": {
+    "electron-connect": "^0.3.3"
   }
 }
