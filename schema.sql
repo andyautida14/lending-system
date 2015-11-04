@@ -94,6 +94,7 @@ DROP TABLE IF EXISTS `interests`;
 CREATE TABLE `interests` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `for_date` date NOT NULL,
+  `due_id` bigint(20) unsigned NOT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -125,4 +126,4 @@ CREATE TABLE `payments` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-04 17:59:36
+-- Dump completed on 2015-11-04 19:03:00
