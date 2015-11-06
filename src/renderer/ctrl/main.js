@@ -6,9 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 
 var Class = require("../constituent.min.js").Class;
 
-exports.MainCtrl = Class(function($scope) {
+exports.MainCtrl = Class(function($scope, moment) {
   $scope.main = this;
 
+  this.today = moment();
+
+  this.year = this.today.year();
   this.financers = [
     {
       id: 1,
@@ -25,6 +28,8 @@ exports.MainCtrl = Class(function($scope) {
   ];
 
   this.selected = this.financers[0];
+
+  console.log("here");
 })
 .method("select", function(financer) {
   console.log(financer);

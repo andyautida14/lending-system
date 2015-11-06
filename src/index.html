@@ -16,6 +16,10 @@
           <a href="#" onclick="main.select(financer)">{{financer.name}}</a>
         </li>
       </ul>
+
+			<input type="number" ng-model="main.year"/>
+
+			<button class="btn btn-primary">New Due</button>
 		</div>
 		<script>require('electron-connect').client.create()</script>
 		<script src="node_modules/moment/min/moment.min.js"></script>
