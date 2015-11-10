@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var Class = require("../constituent.min.js").Class;
 
-exports.MainCtrl = Class(function($scope, moment) {
+function MainCtrl ($scope, moment) {
   $scope.main = this;
 
   this.today = moment();
@@ -27,11 +27,10 @@ exports.MainCtrl = Class(function($scope, moment) {
     }
   ];
 
-  this.selected = this.financers[0];
+  this.select(this.financers[0]);
+}
 
-  console.log("here");
-})
+exports.MainCtrl = Class(MainCtrl)
 .method("select", function(financer) {
-  console.log(financer);
   this.selected = financer;
 })

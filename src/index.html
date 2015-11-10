@@ -6,20 +6,33 @@
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
 	</head>
 	<body ng-controller="main" role="document" style="padding-top:40px;">
-		<div class="btn-group" uib-dropdown>
-			<button id="financers-dropdown" type="button" class="btn btn-primary">{{main.selected.name}}</button>
-			<button type="button" class="btn btn-primary" uib-dropdown-toggle>
-        <span class="caret"></span>
-      </button>
-			<ul class="uib-dropdown-menu" role="menu" aria-labelledby="financers-dropdown">
-        <li role="menuitem" ng-repeat="financer in main.financers">
-          <a href="#" onclick="main.select(financer)">{{financer.name}}</a>
-        </li>
-      </ul>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-3">
 
-			<input type="number" ng-model="main.year"/>
+					<form role="form">
+						<div class="form-group">
+							<div class="btn-group" uib-dropdown>
+								<button id="financers-dropdown" type="button" class="btn btn-primary">{{main.selected.name}}</button>
+								<button type="button" class="btn btn-primary" uib-dropdown-toggle>
+									<span class="caret"></span>
+								</button>
+								<ul class="uib-dropdown-menu" role="menu" aria-labelledby="financers-dropdown">
+									<li role="menuitem" ng-repeat="financer in main.financers" ng-init="main = main">
+										<a href="#" onclick="main.select(financer)">{{financer.name}}</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="number" class="form-control" ng-model="main.year"/>
+						</div>
+					</form>
 
-			<button class="btn btn-primary">New Due</button>
+					<button class="btn btn-primary">New Due</button>
+				</div>
+				<div class="col-sm-offset-9 col-md-offset-9"></div>
+			</div>
 		</div>
 		<script>require('electron-connect').client.create()</script>
 		<script src="node_modules/moment/min/moment.min.js"></script>
