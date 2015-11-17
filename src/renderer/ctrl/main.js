@@ -6,29 +6,20 @@ Object.defineProperty(exports, "__esModule", {
 
 var Class = require("../constituent.min.js").Class;
 
-function MainCtrl ($scope, moment) {
+function MainCtrl ($scope, moment, Financers) {
   $scope.main = this;
 
   this.today = moment();
 
   this.year = this.today.year();
-  this.financers = [
-    {
-      id: 1,
-      name: "Financer 1"
-    },
-    {
-      id: 2,
-      name: "Financer 2"
-    },
-    {
-      id: 3,
-      name: "Financer 3"
+
+  Financers.getAll().then(function(financers) {
+    console.log(financers);
+    $scope.main.financers = financers;
+    if (financers.length) {
+      $scope.main.selected = financers[0];
     }
-  ];
-
-  this.selected = this.financers[0];
-
+  });
   $scope.$watch("main.selected", this.onFinancerChange);
   $scope.$watch("main.year", this.onYearChange);
 }
