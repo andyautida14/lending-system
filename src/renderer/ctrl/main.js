@@ -33,3 +33,6 @@ exports.MainCtrl = Class(MainCtrl)
   console.log("oldValue", oldValue);
   console.log("newValue", newValue);
 })
+.method("onNewDue", function() {
+  console.log("onNewDue");
+})
