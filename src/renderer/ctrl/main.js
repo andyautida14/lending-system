@@ -27,10 +27,18 @@ function MainCtrl ($scope, moment) {
     }
   ];
 
-  this.select(this.financers[0]);
+  this.selected = this.financers[0];
+
+  $scope.$watch("main.selected", this.onFinancerChange);
+  $scope.$watch("main.year", this.onYearChange);
 }
 
 exports.MainCtrl = Class(MainCtrl)
-.method("select", function(financer) {
-  this.selected = financer;
+.method("onFinancerChange", function(newValue, oldValue) {
+  console.log("oldValue", oldValue);
+  console.log("newValue", newValue);
+})
+.method("onYearChange", function(newValue, oldValue) {
+  console.log("oldValue", oldValue);
+  console.log("newValue", newValue);
 })
