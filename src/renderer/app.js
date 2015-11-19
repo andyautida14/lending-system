@@ -2,14 +2,14 @@
 
 var MainCtrl = require('./renderer/ctrl/main.js').MainCtrl;
 var Menu = require('./renderer/svc/menu.js').Menu;
-var angular = require("angular");
 
 angular.module("app", [
 	require("angular-ui-bootstrap"),
 	require("angular-moment"),
 	"ui.grid",
-	"app.db",
-	"ui.grid.pinning"
+	"ui.grid.pinning",
+	"ui.grid.autoResize",
+	"app.db"
 ])
 .controller("main", MainCtrl)
 .service("Menu", Menu);

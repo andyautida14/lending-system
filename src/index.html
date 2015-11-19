@@ -28,17 +28,75 @@
 
 			<br>
 
-			<uib-tabset>
-				<uib-tab heading="Unpaid">
-					<div ui-grid="main.unpaidGridOptions" class="col-sm-12 col-md-12" ui-grid-pinning></div>
-				</uib-tab>
-				<uib-tab heading="Paid">
+			<div class="container">
+				<uib-tabset>
+					<uib-tab heading="Unpaid">
+						<div class="col-sm-12 col-md-12">
+							<div ui-grid="main.unpaidGridOptions" class="app-grid" style="width: 100%" ui-grid-pinning></div>
+						</div>
+					</uib-tab>
+					<uib-tab heading="Paid">
+						<div ui-grid="main.paidGridOptions" class="col-sm-12 col-md-12 app-grid" ui-grid-pinning></div>
+					</uib-tab>
+				</uib-tabset>
+			</div>
 
-				</uib-tab>
-			</uib-tabset>
+			<br>
+
+			<div class="row">
+				<div class="col-sm-4 col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Interest Collection</div>
+						<div class="panel-body">
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="interest-year" class="control-label col-sm-2 col-md-2">Year:</label>
+									<div class="col-sm-10 col-md-10">
+										<input type="number" id="interest-year" class="form-control" length="4" ng-model="main.interestYear" />
+									</div>
+								</div>
+							</form>
+							<div ui-grid="main.interestGridOptions" class="app-grid"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4">
+					<div class="panel panel-primary">
+							<div class="panel-heading">Partial Collection</div>
+							<div class="panel-body">
+								<form role="form" class="form-horizontal">
+									<div class="form-group">
+										<label for="partial-year" class="control-label col-sm-2 col-md-2">Year:</label>
+										<div class="col-sm-10 col-md-10">
+											<input type="number" id="partial-year" class="form-control" maxlength="4" ng-model="main.partialYear" />
+										</div>
+									</div>
+								</form>
+								<div ui-grid="main.partialGridOptions" class="app-grid"></div>
+							</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4">
+					<div class="panel panel-primary">
+							<div class="panel-heading">Full Payment Collection</div>
+							<div class="panel-body">
+								<form role="form" class="form-horizontal">
+									<div class="form-group">
+										<label for="full-year" class="control-label col-sm-2 col-md-2">Year:</label>
+										<div class="col-sm-10 col-md-10">
+											<input type="number" id="full-year" class="form-control" maxlength="4" ng-model="main.fullYear" />
+										</div>
+									</div>
+								</form>
+								<div ui-grid="main.fullGridOptions" class="app-grid"></div>
+							</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script>require('electron-connect').client.create()</script>
 		<script src="node_modules/moment/min/moment.min.js"></script>
+		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
 		<script src="renderer/db.js"></script>
 		<script src="renderer/app.js"></script>
