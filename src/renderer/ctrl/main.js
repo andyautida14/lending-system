@@ -16,18 +16,17 @@ function MainCtrl ($scope, moment, Menu, Financers) {
   $scope.$watch("main.selected", this.onFinancerChange);
   $scope.$watch("main.year", this.onYearChange);
 
-  this.getFinancers(Financers);
+  this.getFinancers($scope, Financers);
 }
 
 exports.MainCtrl = Class(MainCtrl)
-.method("getFinancers", function(Financers) {
-  var that = this;
-
+.method("getFinancers", function($scope, Financers) {
   Financers.getAll().then(function(financers) {
-    console.log(financers);
-    that.financers = financers;
     if (financers.length) {
-      that.selected = financers[0];
+      $scope.$apply(function() {
+        $scope.main.financers = financers;
+        $scope.main.selected = financers[0];
+      });
     }
   });
 })
