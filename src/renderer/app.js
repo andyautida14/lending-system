@@ -7,7 +7,9 @@ var angular = require("angular");
 angular.module("app", [
 	require("angular-ui-bootstrap"),
 	require("angular-moment"),
-	"app.db"
+	"ui.grid",
+	"app.db",
+	"ui.grid.pinning"
 ])
 .controller("main", MainCtrl)
 .service("Menu", Menu);
