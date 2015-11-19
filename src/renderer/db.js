@@ -3,6 +3,7 @@
 var renderer = './renderer/';
 var config = require(renderer + 'db-config.json');
 var db = require(renderer + 'lib/database.js').connect(config);
+var angular = require("angular");
 
 angular.module('app.db', [])
 .value("Database", db.database)
