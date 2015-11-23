@@ -2,6 +2,7 @@
 
 var MainCtrl = require('./renderer/ctrl/main.js').MainCtrl;
 var Menu = require('./renderer/svc/menu.js').Menu;
+var ColumnDefs = require('./renderer/svc/column-defs.js').ColumnDefs;
 
 angular.module("app", [
 	require("angular-ui-bootstrap"),
@@ -13,4 +14,5 @@ angular.module("app", [
 	"test"
 ])
 .controller("main", MainCtrl)
-.service("Menu", Menu);
+.service("Menu", Menu)
+.service("ColumnDefs", ColumnDefs);

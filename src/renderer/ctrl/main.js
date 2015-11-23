@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var Class = require("../constituent.min.js").Class;
 
-function MainCtrl ($scope, moment, Menu, Financers, SampleData) {
+function MainCtrl ($scope, moment, Menu, ColumnDefs, Financers, SampleData) {
   Menu.setup();
 
   $scope.main = this;
@@ -14,53 +14,16 @@ function MainCtrl ($scope, moment, Menu, Financers, SampleData) {
   this.year = this.today.year();
 
   this.unpaidGridOptions = {
-    columnDefs: [
-      {name: "Name", width: 100, pinnedLeft: true},
-      {name: "Date Taken", width: 100, pinnedLeft: true},
-      {name: "Principal", width: 100},
-      {name: "Interest", width: 100},
-      {name: "Jan", width: 50},
-      {name: "Feb", width: 50},
-      {name: "Mar", width: 50},
-      {name: "Apr", width: 50},
-      {name: "May", width: 50},
-      {name: "Jun", width: 50},
-      {name: "Jul", width: 50},
-      {name: "Aug", width: 50},
-      {name: "Sep", width: 50},
-      {name: "Oct", width: 50},
-      {name: "Nov", width: 50},
-      {name: "Dec", width: 50}
-    ]
+    columnDefs: ColumnDefs.main()
   };
 
   this.paidGridOptions = {
-    columnDefs: [
-      {name: "Name", width: 100, pinnedLeft: true},
-      {name: "Date Taken", width: 100, pinnedLeft: true},
-      {name: "Principal", width: 100},
-      {name: "Interest", width: 100},
-      {name: "Jan", width: 50},
-      {name: "Feb", width: 50},
-      {name: "Mar", width: 50},
-      {name: "Apr", width: 50},
-      {name: "May", width: 50},
-      {name: "Jun", width: 50},
-      {name: "Jul", width: 50},
-      {name: "Aug", width: 50},
-      {name: "Sep", width: 50},
-      {name: "Oct", width: 50},
-      {name: "Nov", width: 50},
-      {name: "Dec", width: 50}
-    ]
+    columnDefs: ColumnDefs.main()
   };
 
   this.interestYear = this.partialYear = this.fullYear = this.year;
   this.interestGridOptions = this.partialGridOptions = this.fullGridOptions = {
-    columnDefs: [
-      {name: "Month", field: "month"},
-      {name: "Amount", field: "amount"}
-    ],
+    columnDefs: ColumnDefs.collections(),
     data: SampleData.collections()
   };
 
