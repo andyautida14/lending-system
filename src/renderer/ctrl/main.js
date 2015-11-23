@@ -23,7 +23,11 @@ function MainCtrl ($scope, moment, Menu, ColumnDefs, Financers, SampleData) {
     columnDefs: ColumnDefs.main()
   };
 
-  this.interestYear = this.partialYear = this.fullYear = this.year;
+  this.todayGridOptions = {
+    columnDefs: ColumnDefs.main()
+  };
+
+  this.interestYear = this.partialYear = this.fullYear = this.todayYear = this.year;
   this.interestGridOptions = this.partialGridOptions = this.fullGridOptions = {
     columnDefs: ColumnDefs.collections(),
     data: SampleData.collections()

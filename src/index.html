@@ -28,8 +28,8 @@
 
 			<br>
 
-			<div class="container">
-				<uib-tabset>
+			<div class="row">
+				<uib-tabset class="col-sm-12 col-md-12">
 					<uib-tab heading="Unpaid">
 						<div ui-grid="main.unpaidGridOptions" class="col-sm-12 col-md-12 app-grid" ui-grid-pinning></div>
 					</uib-tab>
@@ -89,6 +89,26 @@
 								<div ui-grid="main.fullGridOptions" class="app-grid"></div>
 							</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Today's Dues</div>
+						<div class="panel-body">
+							<form role="form" class="form-horizontal">
+								<div class="form-group">
+									<label for="today-year" class="control-label col-sm-2 col-md-2">Year:</label>
+									<div class="col-sm-2 col-md-2">
+										<input type="number" id="today-year" class="form-control" maxlength="4" ng-model="main.todayYear" />
+									</div>
+									<div class="col-sm-offset-8"></div>
+								</div>
+							</form>
+							<div ui-grid="main.todayGridOptions" class="app-grid" ui-grid-pinning></div>
+						</div>
+				</div>
 				</div>
 			</div>
 		</div>
