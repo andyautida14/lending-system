@@ -10,6 +10,8 @@ function MainCtrl ($scope, moment, Menu, ColumnDefs, Financers, SampleData) {
   Menu.setup();
 
   $scope.main = this;
+  this.$scope = $scope;
+
   this.today = moment();
   this.year = this.today.year();
 
@@ -30,16 +32,18 @@ function MainCtrl ($scope, moment, Menu, ColumnDefs, Financers, SampleData) {
   $scope.$watch("main.selected", this.onFinancerChange);
   $scope.$watch("main.year", this.onYearChange);
 
-  this.getFinancers($scope, Financers);
+  this.getFinancers(Financers);
 }
 
 exports.MainCtrl = Class(MainCtrl)
-.method("getFinancers", function($scope, Financers) {
+.method("getFinancers", function(Financers) {
+  var self = this;
+
   Financers.getAll().then(function(financers) {
     if (financers.length) {
-      $scope.$apply(function() {
-        $scope.main.financers = financers;
-        $scope.main.selected = financers[0];
+      self.$scope.$apply(function() {
+        self.financers = financers;
+        self.selected = financers[0];
       });
     }
   });
