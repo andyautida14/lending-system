@@ -9,7 +9,8 @@ angular.module("app", [
 	"ui.grid",
 	"ui.grid.pinning",
 	"ui.grid.autoResize",
-	"app.db"
+	"app.db",
+	"test"
 ])
 .controller("main", MainCtrl)
 .service("Menu", Menu);

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var Class = require("../constituent.min.js").Class;
 
-function MainCtrl ($scope, moment, Menu, Financers) {
+function MainCtrl ($scope, moment, Menu, Financers, SampleData) {
   Menu.setup();
 
   $scope.main = this;
@@ -58,9 +58,10 @@ function MainCtrl ($scope, moment, Menu, Financers) {
   this.interestYear = this.partialYear = this.fullYear = this.year;
   this.interestGridOptions = this.partialGridOptions = this.fullGridOptions = {
     columnDefs: [
-      {name: "Month"},
-      {name: "Amount"}
-    ]
+      {name: "Month", field: "month"},
+      {name: "Amount", field: "amount"}
+    ],
+    data: SampleData.collections()
   };
 
   $scope.$watch("main.selected", this.onFinancerChange);
